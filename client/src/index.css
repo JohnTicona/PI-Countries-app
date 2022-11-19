@@ -1,0 +1,171 @@
+@import './normalize.css';
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@400;900&family=Roboto:wght@300;400;700&display=swap');
+
+:root {
+  --white: #ffffff;
+  --gray1: #edf2f6;
+  --gray2: #2f3848;
+  --gray3: #1a202d;
+  --black: #000000;
+  --headingFont: 'Raleway', sans-serif;
+  --textFont: 'Roboto', sans-serif;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+html {
+  box-sizing: border-box;
+  height: 100vh;
+  font-size: 62.5%;
+}
+
+body {
+  min-height: 100%;
+  background-color: var(--gray1);
+  font-size: 16px;
+  font-size: 1.6rem;
+  font-family: var(--textFont);
+}
+
+h1,
+h2 {
+  font-family: var(--headingFont);
+  font-weight: 900;
+  /* margin: 0 0 3.5rem 0; */
+  /* text-align: center; */
+  color: var(--gray2);
+}
+h1 span {
+  font-weight: 400;
+}
+h1 {
+  font-size: 3rem;
+}
+h2 {
+  font-size: 2.4rem;
+}
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+a {
+  text-decoration: none;
+  color: var(--gray2);
+}
+
+.container {
+  max-width: 120rem;
+  width: 100%;
+  margin: 0 auto;
+}
+
+/** BOTONES **/
+.btn {
+  margin-top: 2rem;
+  font-family: var(--headingFont);
+  padding: 1.5rem;
+  font-size: 1.4;
+  font-weight: 400;
+  border-radius: 0.5rem;
+  border: none;
+  transition: background-color 0.3s ease;
+  text-align: center;
+}
+.btn:hover {
+  cursor: pointer;
+}
+.btn-primary {
+  background-color: var(--gray2);
+  color: var(--white);
+}
+.btn-primary:hover {
+  background: var(--gray3);
+}
+.btn-secondary {
+  background-color: var(--gray1);
+}
+
+.btn-delete {
+  background-color: rgb(230, 78, 78);
+  color: white;
+  font-weight: bold;
+  margin: 0.6rem 0;
+}
+
+.btn-delete:hover {
+  background-color: rgb(212, 71, 71);
+}
+
+.btn-block {
+  display: block;
+  width: 100%;
+}
+.btn-submit:hover {
+  background-color: var(--gray2);
+}
+.btn-blank {
+  margin: 0;
+  padding: 0;
+  display: block;
+  background-color: transparent;
+  /* color: white; */
+}
+
+.btn-blank2 {
+  margin: 0;
+  padding: 0;
+  display: block;
+  background-color: transparent;
+  color: white;
+}
+
+/* @media (min-width: 768px) {
+  .contenedor-app {
+    display: flex;
+    min-height: 100vh;
+  }
+
+  aside {
+    background-color: var(--white);
+    flex: 0 0 300px;
+  }
+  .seccion-principal {
+    flex: 1;
+  }
+} */
+
+/* .alerta {
+  position: fixed;
+  top: 0;
+  left: 0;
+  padding: 1rem 3rem;
+  border-radius: 1rem;
+  font-family: var(--headingFont);
+  font-weight: 600;
+  text-transform: uppercase;
+  font-size: 2.2rem;
+  text-align: center;
+  width: 100%;
+}
+@media (min-width: 768px) {
+  .alerta {
+    width: auto;
+    top: 30px;
+    right: 10px;
+    left: auto;
+  }
+}
+
+.alerta-ok {
+  background-color: rgb(109, 211, 109);
+  color: rgb(2, 103, 2);
+}
+.alerta-error {
+  background-color: rgb(230, 78, 78);
+  color: var(--white);
+} */

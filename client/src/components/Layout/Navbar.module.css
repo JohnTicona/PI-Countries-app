@@ -1,0 +1,16 @@
+.navbar {
+  background-color: var(--gray2);
+  height: 7rem;
+}
+
+.content {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.title {
+  color: var(--white);
+}
