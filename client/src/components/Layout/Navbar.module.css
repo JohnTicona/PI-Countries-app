@@ -14,3 +14,9 @@
 .title {
   color: var(--white);
 }
+
+.menu {
+  font-weight: bold;
+  color: var(--white);
+  font-size: 2rem;
+}

@@ -1,0 +1,3 @@
+export const GET_ALL_COUNTRIES = 'GET_COUNTRIES';
+export const GET_COUNTRY_DETAIL = 'GET_COUNTRY_DETAIL';
+export const LOADING = 'LOADING';

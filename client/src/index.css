@@ -3,7 +3,7 @@
 
 :root {
   --white: #ffffff;
-  --gray1: #edf2f6;
+  --gray1: #f1f7fa;
   --gray2: #2f3848;
   --gray3: #1a202d;
   --black: #000000;
@@ -25,7 +25,7 @@ html {
 
 body {
   min-height: 100%;
-  background-color: var(--gray1);
+  /* background-color: var(--gray1); */
   font-size: 16px;
   font-size: 1.6rem;
   font-family: var(--textFont);
@@ -58,10 +58,26 @@ a {
   color: var(--gray2);
 }
 
+img {
+  width: 100%;
+  max-width: 100%;
+  display: block;
+}
+
 .container {
   max-width: 120rem;
   width: 100%;
   margin: 0 auto;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 4rem;
+}
+
+.mt {
+  margin-top: 3rem;
 }
 
 /** BOTONES **/
@@ -122,6 +138,10 @@ a {
   display: block;
   background-color: transparent;
   color: white;
+}
+
+.bold {
+  font-weight: 600;
 }
 
 /* @media (min-width: 768px) {

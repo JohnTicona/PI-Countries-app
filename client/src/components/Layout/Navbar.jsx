@@ -9,7 +9,7 @@ const Navbar = () => {
           <h1 className={styles.title}>Countries</h1>
         </Link>
         <Link to='/countries'>
-          <h1 className={styles.title}>Countries</h1>
+          <h3 className='btn btn-secondary bold'>Create Activity</h3>
         </Link>
       </div>
     </nav>

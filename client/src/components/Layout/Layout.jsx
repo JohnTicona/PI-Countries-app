@@ -6,7 +6,7 @@ const Layout = () => {
     <div>
       <Navbar />
 
-      <div className='container'>
+      <div className='container mt'>
         <Outlet />
       </div>
     </div>
