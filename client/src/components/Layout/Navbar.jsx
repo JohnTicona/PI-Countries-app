@@ -6,9 +6,9 @@ const Navbar = () => {
     <nav className={styles.navbar}>
       <div className={`${styles.content} container`}>
         <Link to='/countries'>
-          <h1 className={styles.title}>Countries</h1>
+          <h1 className={styles.title}>COUNTRIES - APP</h1>
         </Link>
-        <Link to='/countries'>
+        <Link to='/countries/activities'>
           <h3 className='btn btn-secondary bold'>Create Activity</h3>
         </Link>
       </div>
