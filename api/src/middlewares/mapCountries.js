@@ -1,7 +1,7 @@
 const mapCountries = arrayCountries => {
   const countries = arrayCountries.map(country => ({
     id: country.cca3,
-    name: country.name.common,
+    name: country.translations.spa.common,
     flag: country.flags[1],
     continent: country.continents[0],
     capital: country.capital && country.capital[0],

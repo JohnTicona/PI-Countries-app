@@ -4,7 +4,7 @@ import { useDispatch } from 'react-redux';
 import { getCountryDetail } from '../redux/actions';
 
 const CountryCard = ({ country }) => {
-  const { id, name, flag, continent } = country;
+  const { id, name, flag, continent, population } = country;
   const navigate = useNavigate();
   const dispatch = useDispatch();
 
@@ -21,6 +21,7 @@ const CountryCard = ({ country }) => {
       <div className={style.card_body}>
         <h2>{name}</h2>
         <h3>Continent: {continent}</h3>
+        <h3>Population: {new Intl.NumberFormat('de-DE').format(population)}</h3>
       </div>
     </div>
   );

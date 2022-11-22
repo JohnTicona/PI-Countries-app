@@ -44,7 +44,31 @@ const CountryDetail = ({ country }) => {
           </div>
         </div>
       </div>
-      {activities.length >= 0 && <h1>Actvities</h1>}
+
+      {activities.length > 0 && (
+        <>
+          <h1>Activities</h1>
+          <hr />
+          <div className={style.content_activities}>
+            {activities.map(activity => (
+              <div>
+                <h2>
+                  Name: <span>{activity.name}</span>
+                </h2>
+                <h2>
+                  Difficulty: <span>{activity.difficulty}</span>
+                </h2>
+                <h2>
+                  Duration: <span>{activity.duration}</span>
+                </h2>
+                <h2>
+                  Season: <span>{activity.season}</span>
+                </h2>
+              </div>
+            ))}
+          </div>
+        </>
+      )}
     </>
   );
 };

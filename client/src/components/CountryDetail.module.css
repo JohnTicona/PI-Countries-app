@@ -32,3 +32,17 @@
 .content span {
   font-weight: 500;
 }
+
+.content_activities {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.content_activities div {
+  margin-bottom: 3rem;
+}
+
+.content_activities span {
+  font-weight: 500;
+  /* text-transform: capitalize; */
+}

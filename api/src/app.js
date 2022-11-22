@@ -10,15 +10,15 @@ server.use(express.json());
 server.use(morgan('dev'));
 
 // Config CORS
-const whiteList = ['http://localhost:3000', ''];
+const whiteList = ['http://localhost:3000'];
 const corsOptions = {
   origin: function (origin, callback) {
-    // if (whiteList.includes(origin)) {
-    //   callback(null, true);
-    // } else {
-    //   callback(new Error('Error de Cors'));
-    // }
-    callback(null, true);
+    if (whiteList.includes(origin)) {
+      callback(null, true);
+    } else {
+      callback(new Error('Error de Cors'));
+    }
+    // callback(null, true);
   },
 };
 

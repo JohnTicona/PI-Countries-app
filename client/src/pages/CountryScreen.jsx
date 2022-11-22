@@ -1,17 +1,18 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
 import CountryDetail from '../components/CountryDetail';
+import Spinner from '../components/Spinner/Spinner';
 
 const CountryScreen = () => {
-  const country = useSelector(state => state.countryDetail);
+  const { countryDetail, loading } = useSelector(state => state);
 
-  if (!country) {
-    return <h1>Loading</h1>;
+  if (loading) {
+    return <Spinner />;
   }
 
   return (
     <div>
-      <CountryDetail country={country} />
+      <CountryDetail country={countryDetail} />
     </div>
   );
 };

@@ -1,4 +1,14 @@
-import { GET_ALL_COUNTRIES, GET_COUNTRY_DETAIL, LOADING } from '../types';
+import {
+  CREATE_ACTIVITY,
+  FILTER_BY_CONTINENT,
+  GET_ALL_COUNTRIES,
+  GET_COUNTRY_DETAIL,
+  LOADING,
+  SORT_BY_NAME_ASC,
+  SORT_BY_NAME_DES,
+  SORT_BY_POPULATION_ASC,
+  SORT_BY_POPULATION_DES,
+} from '../types';
 
 const initialState = {
   countries: [],
@@ -19,8 +29,29 @@ const countriesReducer = (state = initialState, { type, payload }) => {
     case GET_COUNTRY_DETAIL:
       return {
         ...state,
-        countryDetail: payload,
         loading: false,
+        countryDetail: payload,
+      };
+
+    case CREATE_ACTIVITY:
+      return {
+        ...state,
+        loading: false,
+      };
+
+    case FILTER_BY_CONTINENT:
+      return {
+        ...state,
+        countries: [...payload],
+      };
+
+    case SORT_BY_NAME_ASC:
+    case SORT_BY_NAME_DES:
+    case SORT_BY_POPULATION_ASC:
+    case SORT_BY_POPULATION_DES:
+      return {
+        ...state,
+        countries: [...payload],
       };
 
     case LOADING:

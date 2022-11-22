@@ -11,7 +11,7 @@ router.get('/', async (req, res) => {
 
     if (!name) {
       const allCountries = await Country.findAll({
-        attributes: ['id', 'name', 'continent', 'flag'],
+        attributes: ['id', 'name', 'continent', 'flag', 'population'],
         order: [['name', 'ASC']],
       });
       res.status(200).json(allCountries);
