@@ -1,6 +1,6 @@
-import { useState, useEffect } from 'react';
+import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import CountryCard from '../components/CountryCard';
+import CountryCard from '../components/Country/CountryCard';
 import FilterOptions from '../components/FilterOptions';
 import Pagination from '../components/Pagination';
 import SortOptions from '../components/SortOptions';
@@ -8,7 +8,6 @@ import Spinner from '../components/Spinner/Spinner';
 import { getAllCountries } from '../redux/actions';
 
 const CountriesScreen = () => {
-  const [postsPerPage] = useState(8);
   const currentPage = useSelector(state => state.currentPage);
 
   const dispatch = useDispatch();
@@ -18,6 +17,7 @@ const CountriesScreen = () => {
     dispatch(getAllCountries());
   }, [dispatch]);
 
+  const postsPerPage = 8;
   const lastPostIndex = currentPage * postsPerPage;
   const firstPostIndex = lastPostIndex - postsPerPage;
   const currentPosts = countriesFilter.slice(firstPostIndex, lastPostIndex);

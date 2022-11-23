@@ -1,7 +1,7 @@
 import style from './CountryCard.module.css';
 import { useNavigate } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
-import { getCountryDetail } from '../redux/actions';
+import { getCountryDetail } from '../../redux/actions';
 
 const CountryCard = ({ country }) => {
   const { id, name, flag, continent, population } = country;

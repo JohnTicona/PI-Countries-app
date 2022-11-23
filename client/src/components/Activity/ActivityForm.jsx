@@ -1,10 +1,10 @@
 import style from './ActivityForm.module.css';
 import { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { createActivity, getAllCountries } from '../redux/actions';
-import { difficulties, seasons } from '../data/dataCountries';
+import { createActivity, getAllCountries } from '../../redux/actions';
+import { difficulties, seasons } from '../../data/dataCountries';
 import { useNavigate } from 'react-router-dom';
-import Alert from './Alert';
+import Alert from '../Alert/Alert';
 
 const ActivityForm = () => {
   const [activity, setActivity] = useState({

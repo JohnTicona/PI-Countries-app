@@ -1,6 +1,6 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
-import CountryDetail from '../components/CountryDetail';
+import CountryDetail from '../components/Country/CountryDetail';
 import Spinner from '../components/Spinner/Spinner';
 
 const CountryScreen = () => {

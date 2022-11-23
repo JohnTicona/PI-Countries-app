@@ -1,4 +1,4 @@
-import ActivityForm from '../components/ActivityForm';
+import ActivityForm from '../components/Activity/ActivityForm';
 
 const ActivitiesScreen = () => {
   return (

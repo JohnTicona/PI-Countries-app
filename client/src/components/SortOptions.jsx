@@ -10,17 +10,14 @@ const SortOptions = () => {
   };
 
   return (
-    <div>
-      <div>Search</div>
-      <div>
-        <select onChange={handleSort}>
-          <option value='nameAsc'>A - Z</option>
-          <option value='nameDes'>Z - A</option>
-          <option value='popAsc'>population ASC</option>
-          <option value='popDes'>population DES</option>
-        </select>
-      </div>
-    </div>
+    <>
+      <select onChange={handleSort}>
+        <option value='nameAsc'>A - Z</option>
+        <option value='nameDes'>Z - A</option>
+        <option value='popAsc'>population ASC</option>
+        <option value='popDes'>population DES</option>
+      </select>
+    </>
   );
 };
 
