@@ -58,14 +58,8 @@ export const createActivity = activity => {
     try {
       dispatch(loadingAction(true));
 
-      const res = await axios.post(
-        `http://localhost:3001/activities`,
-        activity
-      );
-      const data = res.data;
-
-      console.log(data);
-
+      await axios.post(`http://localhost:3001/activities`, activity);
+      // const data = res.data;
       dispatch({
         type: CREATE_ACTIVITY,
       });
@@ -75,32 +69,44 @@ export const createActivity = activity => {
   };
 };
 
-export const filterByContinent = (countries, continent) => {
-  const countriesByContinent = countries.filter(
-    country => country.continent === continent
-  );
-  return {
-    type: FILTER_BY_CONTINENT,
-    payload: countriesByContinent,
-  };
-};
+export const filterByContinent = (countries, continent) => ({
+  type: FILTER_BY_CONTINENT,
+  payload: countries.filter(country => country.continent === continent),
+});
 
-export const sortByNameAsc = countries => ({
+const sortByNameAsc = countries => ({
   type: SORT_BY_NAME_ASC,
   payload: sortAscending(countries, 'name'),
 });
 
-export const sortByNameDes = countries => ({
+const sortByNameDes = countries => ({
   type: SORT_BY_NAME_DES,
   payload: sortDescending(countries, 'name'),
 });
 
-export const sortByPopulationAsc = countries => ({
+const sortByPopulationAsc = countries => ({
   type: SORT_BY_POPULATION_ASC,
   payload: sortAscending(countries, 'population'),
 });
 
-export const sortByPopulationDes = countries => ({
+const sortByPopulationDes = countries => ({
   type: SORT_BY_POPULATION_DES,
   payload: sortDescending(countries, 'population'),
 });
+
+export const sortCountries = (countries, value) => {
+  switch (value) {
+    case 'nameAsc':
+      return sortByNameAsc(countries);
+
+    case 'nameDes':
+      return sortByNameDes(countries);
+    case 'popAsc':
+      return sortByPopulationAsc(countries);
+    case 'popDes':
+      return sortByPopulationDes(countries);
+
+    default:
+      return countries;
+  }
+};

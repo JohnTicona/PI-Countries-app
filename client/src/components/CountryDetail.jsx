@@ -50,8 +50,8 @@ const CountryDetail = ({ country }) => {
           <h1>Activities</h1>
           <hr />
           <div className={style.content_activities}>
-            {activities.map(activity => (
-              <div>
+            {activities.map((activity, index) => (
+              <div key={index}>
                 <h2>
                   Name: <span>{activity.name}</span>
                 </h2>

@@ -1,0 +1,42 @@
+.form_container {
+  padding: 3rem;
+  max-width: 500px;
+  width: 95%;
+  background-color: var(--white);
+  border-radius: 1rem;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px,
+    rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+}
+
+.form_group {
+  display: flex;
+  margin: 2rem 0;
+  align-items: center;
+}
+
+.form_group label {
+  flex: 0 0 100px;
+  font-family: var(--textFont);
+  font-weight: bold;
+}
+
+.form_group input {
+  border: 1px solid #e1e1e1;
+  padding: 1rem;
+  flex: 1;
+  border-radius: 0.5rem;
+}
+
+.form_group select {
+  width: 100%;
+  border-radius: 0.5rem;
+}
+
+.form_countries {
+  background-color: var(--gray2);
+  color: var(--white);
+  border-radius: 1rem;
+  display: inline-block;
+  padding: 0.3rem 0.6rem;
+  margin: 1rem 1rem 0 0;
+}

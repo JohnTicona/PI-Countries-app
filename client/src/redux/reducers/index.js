@@ -1,3 +1,4 @@
+import axios from 'axios';
 import {
   CREATE_ACTIVITY,
   FILTER_BY_CONTINENT,
@@ -12,6 +13,7 @@ import {
 
 const initialState = {
   countries: [],
+  countriesFilter: [],
   countryDetail: null,
   loading: false,
 };
@@ -22,6 +24,7 @@ const countriesReducer = (state = initialState, { type, payload }) => {
       return {
         ...state,
         countries: payload,
+        countriesFilter: payload,
         countryDetail: null,
         loading: false,
       };
@@ -42,7 +45,7 @@ const countriesReducer = (state = initialState, { type, payload }) => {
     case FILTER_BY_CONTINENT:
       return {
         ...state,
-        countries: [...payload],
+        countriesFilter: payload,
       };
 
     case SORT_BY_NAME_ASC:
@@ -51,7 +54,7 @@ const countriesReducer = (state = initialState, { type, payload }) => {
     case SORT_BY_POPULATION_DES:
       return {
         ...state,
-        countries: [...payload],
+        countriesFilter: [...payload],
       };
 
     case LOADING:

@@ -1,20 +1,20 @@
 import { useState, useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import CountryCard from '../components/CountryCard';
-// import FilterOptions from '../components/FilterOptions';
+import FilterOptions from '../components/FilterOptions';
 import SortOptions from '../components/SortOptions';
 import Spinner from '../components/Spinner/Spinner';
 import { getAllCountries } from '../redux/actions';
 
 const CountriesScreen = () => {
   const dispatch = useDispatch();
-  const { countries, loading } = useSelector(state => state);
+  const { countries, countriesFilter, loading } = useSelector(state => state);
 
   const [currentPage, setCurrentPage] = useState(0);
 
-  const filteredCountries = () => {
-    return countries.slice(currentPage, currentPage + 8);
-  };
+  // const filteredCountries = () => {
+  //   return countriesFilter.slice(currentPage, currentPage + 8);
+  // };
 
   const nextPage = () => {
     if (currentPage < countries.length - 8) setCurrentPage(currentPage + 8);
@@ -34,12 +34,12 @@ const CountriesScreen = () => {
 
   return (
     <div>
-      {/* <FilterOptions /> */}
+      <FilterOptions />
       <button onClick={prevPage}>Anterior</button>
       <button onClick={nextPage}>Siguiente</button>
       <SortOptions />
       <div className='grid'>
-        {filteredCountries().map(country => (
+        {countriesFilter.map(country => (
           <CountryCard key={country.id} country={country} />
         ))}
       </div>

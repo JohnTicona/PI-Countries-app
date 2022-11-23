@@ -70,6 +70,16 @@ img {
   margin: 0 auto;
 }
 
+.form_center {
+  display: flex;
+  justify-content: center;
+  margin: 0 auto;
+}
+
+.center {
+  text-align: center;
+}
+
 .grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
@@ -110,7 +120,9 @@ img {
   background-color: rgb(230, 78, 78);
   color: white;
   font-weight: bold;
-  margin: 0.6rem 0;
+  margin: 0.6rem 0.3rem 0.6rem 0.6rem;
+  border-radius: 0.5rem;
+  border: none;
 }
 
 .btn-delete:hover {
@@ -142,6 +154,11 @@ img {
 
 .bold {
   font-weight: 600;
+}
+
+.alerta-error {
+  background-color: rgb(230, 78, 78);
+  color: var(--white);
 }
 
 /* @media (min-width: 768px) {
@@ -185,7 +202,5 @@ img {
   background-color: rgb(109, 211, 109);
   color: rgb(2, 103, 2);
 }
-.alerta-error {
-  background-color: rgb(230, 78, 78);
-  color: var(--white);
-} */
+ 
+*/
