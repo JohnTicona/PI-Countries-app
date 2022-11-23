@@ -6,6 +6,7 @@ import {
   GET_ALL_COUNTRIES,
   GET_COUNTRY_DETAIL,
   LOADING,
+  SET_CURRENT_PAGE,
   SORT_BY_NAME_ASC,
   SORT_BY_NAME_DES,
   SORT_BY_POPULATION_ASC,
@@ -110,3 +111,8 @@ export const sortCountries = (countries, value) => {
       return countries;
   }
 };
+
+export const setCurrentPage = page => ({
+  type: SET_CURRENT_PAGE,
+  payload: page,
+});

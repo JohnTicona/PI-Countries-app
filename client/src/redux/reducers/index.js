@@ -1,10 +1,10 @@
-import axios from 'axios';
 import {
   CREATE_ACTIVITY,
   FILTER_BY_CONTINENT,
   GET_ALL_COUNTRIES,
   GET_COUNTRY_DETAIL,
   LOADING,
+  SET_CURRENT_PAGE,
   SORT_BY_NAME_ASC,
   SORT_BY_NAME_DES,
   SORT_BY_POPULATION_ASC,
@@ -16,6 +16,7 @@ const initialState = {
   countriesFilter: [],
   countryDetail: null,
   loading: false,
+  currentPage: 1,
 };
 
 const countriesReducer = (state = initialState, { type, payload }) => {
@@ -46,6 +47,7 @@ const countriesReducer = (state = initialState, { type, payload }) => {
       return {
         ...state,
         countriesFilter: payload,
+        currentPage: 1,
       };
 
     case SORT_BY_NAME_ASC:
@@ -55,6 +57,13 @@ const countriesReducer = (state = initialState, { type, payload }) => {
       return {
         ...state,
         countriesFilter: [...payload],
+        currentPage: 1,
+      };
+
+    case SET_CURRENT_PAGE:
+      return {
+        ...state,
+        currentPage: payload,
       };
 
     case LOADING:
