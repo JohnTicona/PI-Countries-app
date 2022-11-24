@@ -1,15 +1,29 @@
+import { useState, useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { continents } from '../data/dataCountries';
-import { filterByContinent } from '../redux/actions';
+import { sortFilter } from '../middlewares/sortCountries';
+import { setCountriesFil } from '../redux/actions';
 
 const FilterOptions = () => {
   const { countries } = useSelector(state => state);
-
   const dispatch = useDispatch();
 
+  const [filter, setFilter] = useState('');
+  const [sort, setSort] = useState('nameAsc');
+
   const handleFilter = e => {
-    dispatch(filterByContinent(countries, e.target.value));
+    setFilter(e.target.value);
   };
+
+  const handleSort = e => {
+    setSort(e.target.value);
+  };
+
+  useEffect(() => {
+    const data = sortFilter(countries, sort, filter);
+    dispatch(setCountriesFil(data));
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [filter, sort]);
 
   return (
     <>
@@ -20,6 +34,13 @@ const FilterOptions = () => {
             {continent}
           </option>
         ))}
+      </select>
+
+      <select onChange={handleSort}>
+        <option value='nameAsc'>A - Z</option>
+        <option value='nameDes'>Z - A</option>
+        <option value='popAsc'>population ASC</option>
+        <option value='popDes'>population DES</option>
       </select>
     </>
   );

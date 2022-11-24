@@ -152,3 +152,38 @@ const ActivityForm = () => {
 };
 
 export default ActivityForm;
+
+//  const [activity, setActivity] = useState({
+//     name: '',
+//     difficulty: 0,
+//     duration: 0,
+//     season: '',
+//   });
+//   const { name, difficulty, duration, season } = activity;
+
+//   const [countries, setCountries] = useState([]);
+//   const [error, setError] = useState(false);
+
+//   const navigate = useNavigate();
+//   const dispatch = useDispatch();
+//   const allCountries = useSelector(state => state.countries);
+
+//   useEffect(() => {
+//     dispatch(getAllCountries());
+//   }, [dispatch]);
+
+//   const handleChange = e => {
+//     setActivity({
+//       ...activity,
+//       [e.target.name]: e.target.value,
+//     });
+//   };
+
+//   const handleChangeSelect = e => {
+//     const { id, name } = JSON.parse(e.target.value);
+//     setCountries([...countries, { id, name }]);
+//   };
+
+//   const deleteCountryOption = id => {
+//     setCountries(countries.filter(country => country.id !== id));
+//   };

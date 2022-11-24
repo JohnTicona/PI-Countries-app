@@ -1,17 +1,12 @@
-import axios from 'axios';
-import { sortAscending, sortDescending } from '../../middlewares/sortCountries';
 import {
   CREATE_ACTIVITY,
-  FILTER_BY_CONTINENT,
   GET_ALL_COUNTRIES,
   GET_COUNTRY_DETAIL,
   LOADING,
+  SET_COUNTRIES_FIL,
   SET_CURRENT_PAGE,
-  SORT_BY_NAME_ASC,
-  SORT_BY_NAME_DES,
-  SORT_BY_POPULATION_ASC,
-  SORT_BY_POPULATION_DES,
 } from '../types';
+import axios from 'axios';
 
 const loadingAction = status => ({
   type: LOADING,
@@ -70,49 +65,12 @@ export const createActivity = activity => {
   };
 };
 
-export const filterByContinent = (countries, continent) => ({
-  type: FILTER_BY_CONTINENT,
-  payload: countries.filter(country => country.continent === continent),
-});
-
-const sortByNameAsc = countries => ({
-  type: SORT_BY_NAME_ASC,
-  payload: sortAscending(countries, 'name'),
-});
-
-const sortByNameDes = countries => ({
-  type: SORT_BY_NAME_DES,
-  payload: sortDescending(countries, 'name'),
-});
-
-const sortByPopulationAsc = countries => ({
-  type: SORT_BY_POPULATION_ASC,
-  payload: sortAscending(countries, 'population'),
-});
-
-const sortByPopulationDes = countries => ({
-  type: SORT_BY_POPULATION_DES,
-  payload: sortDescending(countries, 'population'),
-});
-
-export const sortCountries = (countries, value) => {
-  switch (value) {
-    case 'nameAsc':
-      return sortByNameAsc(countries);
-
-    case 'nameDes':
-      return sortByNameDes(countries);
-    case 'popAsc':
-      return sortByPopulationAsc(countries);
-    case 'popDes':
-      return sortByPopulationDes(countries);
-
-    default:
-      return countries;
-  }
-};
-
 export const setCurrentPage = page => ({
   type: SET_CURRENT_PAGE,
   payload: page,
+});
+
+export const setCountriesFil = countries => ({
+  type: SET_COUNTRIES_FIL,
+  payload: countries,
 });

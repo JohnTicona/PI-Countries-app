@@ -3,7 +3,6 @@ import { useDispatch, useSelector } from 'react-redux';
 import CountryCard from '../components/Country/CountryCard';
 import FilterOptions from '../components/FilterOptions';
 import Pagination from '../components/Pagination';
-import SortOptions from '../components/SortOptions';
 import Spinner from '../components/Spinner/Spinner';
 import { getAllCountries } from '../redux/actions';
 
@@ -29,7 +28,6 @@ const CountriesScreen = () => {
   return (
     <div>
       <FilterOptions />
-      <SortOptions />
       <div className='grid'>
         {currentPosts.map(country => (
           <CountryCard key={country.id} country={country} />

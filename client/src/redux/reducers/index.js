@@ -1,14 +1,10 @@
 import {
   CREATE_ACTIVITY,
-  FILTER_BY_CONTINENT,
   GET_ALL_COUNTRIES,
   GET_COUNTRY_DETAIL,
   LOADING,
+  SET_COUNTRIES_FIL,
   SET_CURRENT_PAGE,
-  SORT_BY_NAME_ASC,
-  SORT_BY_NAME_DES,
-  SORT_BY_POPULATION_ASC,
-  SORT_BY_POPULATION_DES,
 } from '../types';
 
 const initialState = {
@@ -43,23 +39,6 @@ const countriesReducer = (state = initialState, { type, payload }) => {
         loading: false,
       };
 
-    case FILTER_BY_CONTINENT:
-      return {
-        ...state,
-        countriesFilter: payload,
-        currentPage: 1,
-      };
-
-    case SORT_BY_NAME_ASC:
-    case SORT_BY_NAME_DES:
-    case SORT_BY_POPULATION_ASC:
-    case SORT_BY_POPULATION_DES:
-      return {
-        ...state,
-        countriesFilter: [...payload],
-        currentPage: 1,
-      };
-
     case SET_CURRENT_PAGE:
       return {
         ...state,
@@ -70,6 +49,13 @@ const countriesReducer = (state = initialState, { type, payload }) => {
       return {
         ...state,
         loading: payload,
+      };
+
+    case SET_COUNTRIES_FIL:
+      return {
+        ...state,
+        countriesFilter: payload,
+        currentPage: 1,
       };
 
     default:
